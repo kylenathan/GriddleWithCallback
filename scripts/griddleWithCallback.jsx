@@ -9,7 +9,7 @@ var GriddleWithCallback = React.createClass({
 			resultsPerPage: 5,
 			loadingComponent: null,
 			enableInfiniteScroll: false
-		}
+		};
 	},
     getInitialState: function(){
       var initial = { "results": [],
@@ -165,7 +165,7 @@ var GriddleWithCallback = React.createClass({
 			var state = {
 				page: 0,
 				filter: filter
-			}
+			};
 
 			this.updateStateWithExternalResults(state, function(updatedState) {
 				//if filter is null or undefined reset the filter.
