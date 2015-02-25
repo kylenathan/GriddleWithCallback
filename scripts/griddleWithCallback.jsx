@@ -49,12 +49,15 @@ var GriddleWithCallback = React.createClass({
 			that.setState(updatedState);
 		});
 	},
+	setDefault: function(original, value){
+		return typeof original === 'undefined' ? value : original;
+	},
     setPage: function(index, pageSize){
         //This should interact with the data source to get the page at the given index
 		var that = this;
 		var state = {
 			page: index,
-			pageSize: setDefault(pageSize, this.state.pageSize)
+			pageSize: this.setDefault(pageSize, this.state.pageSize)
 		};
 
 		this.updateStateWithExternalResults(state, function(updatedState) {
